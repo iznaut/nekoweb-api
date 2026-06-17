@@ -222,7 +222,6 @@ export class BigFile {
 			const end = Math.min(start + chunkSize, file.length);
 			const chunk = file.slice(start, end);
 
-			this.config.logging!(LogType.Info, `Uploading chunk ${chunkIndex} (${chunk.length})`);
 			await this.appendChunk(chunk);
 
 			uploadedBytes += chunk.length;
